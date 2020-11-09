@@ -38,11 +38,13 @@ $ (document).ready(function(){
         console.log (`Metro Results: `, metroResults);
         // populate our metrodata table
             metroResults.forEach(element => {
-                var myLines = element.LinesAffected.join();
-                console.log (myLines);
+                // var myLines = element.LinesAffected.join();
+                // console.log (myLines);
                 console.log (element.LinesAffected);
                 console.log (element.IncidentType);
                 console.log (element.Description);
+                let myNewRow = `<tr><td>${element.LinesAffected}</td><td>${element.IncidentType}</td><td>${element.Description}</td></tr>`
+                $("#metroData").append(myNewRow);
             });
         }
     }
