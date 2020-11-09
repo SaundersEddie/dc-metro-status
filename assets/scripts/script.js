@@ -14,9 +14,8 @@ $ (document).ready(function(){
     const busAPI = `https://api.wmata.com/Incidents.svc/json/BusIncidents?api_key=${PUBLICMETROKEY}`;
     const weatherAPI = `https://api.openweathermap.org/data/2.5/weather?zip=20500&units=imperial&appid=${PUBLICWEATHERKEY}`;
 
-    // this section will need fixing to add a leading 0 when needed 
     let myTime = new Date();
-    const currentTime = `${myTime.getHours()}:${myTime.getMinutes()}`;
+    const currentTime = `${myTime.getHours()}:${("0" + myTime.getMinutes()).slice(-2)}`;
     $('#lastUpdate').text(currentTime);
 
     const displayWeather = (weatherDetails) => {
