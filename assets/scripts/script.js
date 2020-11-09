@@ -25,9 +25,9 @@ $ (document).ready(function(){
         $('#feelsLike').text(Math.round(weatherDetails.main.feels_like));
         $('#currentHumidity').text(weatherDetails.main.humidity);
         $('#forecastHigh').text(Math.round(weatherDetails.main.temp_max));
-        $('#currentConditions').text(weatherDetails.weather[0].description);
+        $('#currentConditions').text(weatherDetails.weather[0].description.charAt(0).toUpperCase()+weatherDetails.weather[0].description.slice(1));
         $('#currentWindSpeed').text(Math.round(weatherDetails.wind.speed));
-        $('#currentWindDirection').text(weatherDetails.wind.deg);
+        // $('#currentWindDirection').text(weatherDetails.wind.deg);
         $('#weatherIcon').html(weatherIcon);
     }
 
