@@ -25,14 +25,14 @@ $ (document).ready(function(){
     const displayWeather = (weatherDetails) => {
         let weatherIcon = `<img src='http://openweathermap.org/img/wn/${weatherDetails.weather[0].icon}@2x.png' alt='Weather Icon'>`;
         // console.log (weatherDetails);
-        $('#weatherLat').text(weatherDetails.coord.lat)
-        $('#weatherLong').text(weatherDetails.coord.lon)
+        // $('#weatherLat').text(weatherDetails.coord.lat)
+        // $('#weatherLong').text(weatherDetails.coord.lon)
         $('#currentTemp').text(Math.round(weatherDetails.main.temp));
         $('#feelsLike').text(Math.round(weatherDetails.main.feels_like));
         $('#currentHumidity').text(weatherDetails.main.humidity);
-        $('#forecastHigh').text(weatherDetails.main.temp_max);
+        $('#forecastHigh').text(Math.round(weatherDetails.main.temp_max));
         $('#currentConditions').text(weatherDetails.weather[0].description);
-        $('#currentWindSpeed').text(weatherDetails.wind.speed);
+        $('#currentWindSpeed').text(Math.round(weatherDetails.wind.speed));
         $('#currentWindDirection').text(weatherDetails.wind.deg);
         $('#weatherIcon').html(weatherIcon);
     }
