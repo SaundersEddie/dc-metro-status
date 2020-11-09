@@ -8,6 +8,18 @@ hr {
   width: 75%;
 }
 
+table {
+  width: 75%;
+  border: 1px solid black;
+}
+
+thead td {
+  border: 1px solid black;
+}
+
+tbody {
+  border: 2px solid black;
+}
 #ourTitle {
   text-align: center;
 }
