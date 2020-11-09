@@ -20,7 +20,7 @@ $ (document).ready(function(){
     $('#lastUpdate').text(currentTime);
 
     const displayWeather = (weatherDetails) => {
-        const weatherIcon = `<img src='http://openweathermap.org/img/wn/${weatherDetails.weather[0].icon}@2x.png' alt='Weather Icon'>`;
+        const weatherIcon = `<img src='https://openweathermap.org/img/wn/${weatherDetails.weather[0].icon}@2x.png' alt='Weather Icon'>`;
         $('#currentTemp').text(Math.round(weatherDetails.main.temp));
         $('#feelsLike').text(Math.round(weatherDetails.main.feels_like));
         $('#currentHumidity').text(weatherDetails.main.humidity);
@@ -35,9 +35,11 @@ $ (document).ready(function(){
         if (metroResults.length === 0 ) {
             console.log ('Nothing to report')
         } else {
-        // console.log (`Metro Results: `, metroResults);
+        console.log (`Metro Results: `, metroResults);
         // populate our metrodata table
             metroResults.forEach(element => {
+                var myLines = element.LinesAffected.join();
+                console.log (myLines);
                 console.log (element.LinesAffected);
                 console.log (element.IncidentType);
                 console.log (element.Description);
@@ -54,9 +56,11 @@ $ (document).ready(function(){
             busResults.forEach(element => {
                 myRoutes = element.RoutesAffected.join();
                 console.log (myRoutes);
-                console.log (element.RoutesAffected);
+                // console.log (element.RoutesAffected);
                 console.log (element.IncidentType);
                 console.log (element.Description);
+                let myNewRow = `<tr><td>${myRoutes}</td><td>${element.IncidentType}</td><td>${element.Description}</td></tr>`
+                $("#busData").append(myNewRow);
             });
         }
     }

@@ -22,6 +22,7 @@ thead td {
 tbody {
   border: 1px solid black;
   margin: 4px 4px;
+  padding: 4px 4px;
 }
 #ourTitle {
   text-align: center;
