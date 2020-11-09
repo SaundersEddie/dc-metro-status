@@ -52,9 +52,11 @@ $ (document).ready(function(){
         } else {
             // populate our busdata table
             busResults.forEach(element => {
-            console.log (element.RoutesAffected);
-            console.log (element.IncidentType);
-            console.log (element.Description);
+                myRoutes = element.RoutesAffected.join();
+                console.log (myRoutes);
+                console.log (element.RoutesAffected);
+                console.log (element.IncidentType);
+                console.log (element.Description);
             });
         }
     }
