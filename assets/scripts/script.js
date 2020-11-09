@@ -1,13 +1,10 @@
 // JQuery Code to display API call results
 // EXS edwyn.saunders@outlook.com
 
-console.log ("Inside Script");
-
-// Auto page refresh every 5 minutes
+// Auto page refresh every 10 minutes
 setTimeout(function(){
     window.location.reload(1);
  }, 600000);
-
 
 $ (document).ready(function(){
 
@@ -23,10 +20,7 @@ $ (document).ready(function(){
     $('#lastUpdate').text(currentTime);
 
     const displayWeather = (weatherDetails) => {
-        let weatherIcon = `<img src='http://openweathermap.org/img/wn/${weatherDetails.weather[0].icon}@2x.png' alt='Weather Icon'>`;
-        // console.log (weatherDetails);
-        // $('#weatherLat').text(weatherDetails.coord.lat)
-        // $('#weatherLong').text(weatherDetails.coord.lon)
+        const weatherIcon = `<img src='http://openweathermap.org/img/wn/${weatherDetails.weather[0].icon}@2x.png' alt='Weather Icon'>`;
         $('#currentTemp').text(Math.round(weatherDetails.main.temp));
         $('#feelsLike').text(Math.round(weatherDetails.main.feels_like));
         $('#currentHumidity').text(weatherDetails.main.humidity);
@@ -41,18 +35,27 @@ $ (document).ready(function(){
         if (metroResults.length === 0 ) {
             console.log ('Nothing to report')
         } else {
-        console.log (`Metro Results: `, metroResults);
+        // console.log (`Metro Results: `, metroResults);
         // populate our metrodata table
+            metroResults.forEach(element => {
+                console.log (element.LinesAffected);
+                console.log (element.IncidentType);
+                console.log (element.Description);
+            });
         }
-
     }
+    
 
     const displayBusResults = (busResults) => {
-        
         if ( busResults.length === 0 ) {
             console.log ("Nothing to report")
         } else {
-            console.log (`Bus Incidents: `, busResults);
+            // populate our busdata table
+            busResults.forEach(element => {
+            console.log (element.RoutesAffected);
+            console.log (element.IncidentType);
+            console.log (element.Description);
+            });
         }
     }
     const busResults = () => {
@@ -74,7 +77,6 @@ $ (document).ready(function(){
                 url: metroAPI,
             })
         .then (function (res) {
-            console.log (res);
             displayMetroResults(res.Incidents);
         })
     }
@@ -92,7 +94,5 @@ $ (document).ready(function(){
     busResults();
     metroResults();
     weatherResults();
-
-
     // No code beyond here, end of JQuery
 });

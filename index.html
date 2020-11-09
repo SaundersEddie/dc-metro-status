@@ -17,8 +17,6 @@
     <div class="container">
         <h2>Current Weather Conditions:  Washington DC</h2>
         <br>
-        <!-- <span id="weatherLat">TestLat</span> -->
-        <!-- <span id="weatherLong">TestLong</span> -->
         <p>Current Temp: <span id="currentTemp"></span>f</p>
         <p>Feels Like: <span id="feelsLike"></span>f</p>
         <p>Forecast High: <span id="forecastHigh"></span>f</p>
@@ -32,20 +30,26 @@
     </div>
     <br><hr><br>
     <div class="container">
-        <h2>Metro Results</h2>
+        <h2>Metro Information</h2>
+      
         <!-- Table to display data -->
         <table >
             <thead>
                 <tr>
                     <td>Station</td>
                     <td>Line</td>
+                    <td>Incident Type</td>
                     <td>Description</td>
                 </tr>
             </thead>
             <tbody id="metroData">
             </tbody>
         </table>
-    </div>
+   
+    <br>
+    <h2>Resources</h2>
+    <p><a href = "https://www.wmata.com/schedules/maps/upload/2019-System-Map.pdf" target="_blank">Metro Subway Map</a> | <a href = "https://www.wmata.com/service/status/" target="_blank">WMATA Status and Alerts</a></p>
+</div>
     <br><hr><br>
     <div class="container">
         <h2>Bus Results</h2>
@@ -53,14 +57,16 @@
             <table >
                 <thead>
                     <tr>
-                        <td>Station</td>
-                        <td>Line</td>
+                        <td>Routes</td>
+                        <td>Incident Type</td>
                         <td>Description</td>
                     </tr>
                 </thead>
                 <tbody id="busData">
                 </tbody>
             </table>
+            <br>
+            <p><a href="https://www.wmata.com/schedules/maps/index.cfm" target="_blank">Metro Bus Map</a> | <a href = "https://www.wmata.com/service/status/" target="_blank">WMATA Status and Alerts</a></p>
     </div>
 
     <br><hr><br>
