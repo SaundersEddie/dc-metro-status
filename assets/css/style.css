@@ -3,3 +3,11 @@
 body {
   background-color: beige;
 }
+
+hr {
+  width: 75%;
+}
+
+#ourTitle {
+  text-align: center;
+}
