@@ -9,11 +9,10 @@ setTimeout(function(){
 $ (document).ready(function(){
 
     const PUBLICMETROKEY = `e13626d03d8e4c03ac07f95541b3091b`; 
-    const PUBLICWEATHERKEY = `f9c22785936f5fc5811e20fb8cb7e2fc`; // removed c from end
+    const PUBLICWEATHERKEY = `f9c22785936f5fc5811e20fb8cb7e2fc`;
     const metroAPI = `https://api.wmata.com/Incidents.svc/json/Incidents?api_key=${PUBLICMETROKEY}`;
     const busAPI = `https://api.wmata.com/Incidents.svc/json/BusIncidents?api_key=${PUBLICMETROKEY}`;
     const weatherAPI = `https://api.openweathermap.org/data/2.5/weather?zip=20500&units=imperial&appid=${PUBLICWEATHERKEY}`;
-
     let myTime = new Date();
     const currentTime = `${myTime.getHours()}:${("0" + myTime.getMinutes()).slice(-2)}`;
     $('#lastUpdate').text(currentTime);
@@ -26,7 +25,6 @@ $ (document).ready(function(){
         $('#forecastHigh').text(Math.round(weatherDetails.main.temp_max));
         $('#currentConditions').text(weatherDetails.weather[0].description.charAt(0).toUpperCase()+weatherDetails.weather[0].description.slice(1));
         $('#currentWindSpeed').text(Math.round(weatherDetails.wind.speed));
-        // $('#currentWindDirection').text(weatherDetails.wind.deg);
         $('#weatherIcon').html(weatherIcon);
     }
 
@@ -39,8 +37,6 @@ $ (document).ready(function(){
             });
         }
     }
-    
-
     const displayBusResults = (busResults) => {
         if ( busResults.length === 0 ) {
             $("#busData").append(`<tr><td>No Delays To Report</td></tr>`);
