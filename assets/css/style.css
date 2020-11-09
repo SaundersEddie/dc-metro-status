@@ -5,11 +5,11 @@ body {
 }
 
 hr {
-  width: 75%;
+  width: 85%;
 }
 
 table {
-  width: 75%;
+  width: 85%;
   border: 1px solid black;
 }
 
@@ -19,7 +19,7 @@ thead td {
   padding: 4px 4px;
 }
 
-tbody {
+tbody tr td {
   border: 1px solid black;
   margin: 4px 4px;
   padding: 4px 4px;
