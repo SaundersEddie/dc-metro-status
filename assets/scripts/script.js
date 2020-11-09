@@ -33,13 +33,10 @@ $ (document).ready(function(){
 
     const displayMetroResults = (metroResults) => {
         if (metroResults.length === 0 ) {
-            // let myNewRow=`<tr><td>No Delays To Report</td></tr>`
             $("#metroData").append(`<tr><td>No Delays To Report</td></tr>`);
         } else {
-            console.log (`Metro Results: `, metroResults);
             metroResults.forEach(element => {
-                // let myNewRow = `<tr><td>${element.LinesAffected}</td><td>${element.IncidentType}</td><td>${element.Description}</td></tr>`
-                $("#metroData").append(`<tr><td>${element.LinesAffected}</td><td>${element.IncidentType}</td><td>${element.Description}</td></tr>`);
+                $("#metroData").append(`<tr><td>${element.LinesAffected.replace(/;/g, "")}</td><td>${element.IncidentType}</td><td>${element.Description}</td></tr>`);
             });
         }
     }
@@ -47,12 +44,10 @@ $ (document).ready(function(){
 
     const displayBusResults = (busResults) => {
         if ( busResults.length === 0 ) {
-            // let myNewRow=`<tr><td>No Delays To Report</td></tr>`
             $("#busData").append(`<tr><td>No Delays To Report</td></tr>`);
         } else {
             busResults.forEach(element => {
                 myRoutes = element.RoutesAffected.join();
-                // let myNewRow = `<tr><td>${myRoutes}</td><td>${element.IncidentType}</td><td>${element.Description}</td></tr>`
                 $("#busData").append(`<tr><td>${myRoutes}</td><td>${element.IncidentType}</td><td>${element.Description}</td></tr>`);
             });
         }
