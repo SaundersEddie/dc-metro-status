@@ -11,6 +11,7 @@
 ## About
 The DC Metro Status page was created just as a fun JQuery page. We use JQuery to call the DC Metro system to get bus and subway status, along with a call to openWeatherMap to get current weather conditions. 
 
+![Screenshot](screenshot.jpg)
 ## Use
 The site can be accessed here:  
 https://saunderseddie.github.io/dc-metro-status/
