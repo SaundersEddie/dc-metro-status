@@ -1,7 +1,8 @@
 /* EXS edwyn.saunders@outlook.com */
 
 body {
-  background-color: beige;
+  background-color: rgb(233, 20, 54);
+  color: antiquewhite;
 }
 
 hr {
@@ -23,6 +24,9 @@ tbody tr td {
   border: 1px solid black;
   margin: 4px 4px;
   padding: 4px 4px;
+}
+a {
+  color: azure;
 }
 #ourTitle {
   text-align: center;
